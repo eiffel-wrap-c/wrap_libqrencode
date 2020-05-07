@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<ewg_config name="qrencode">
+
+  <rule_list>
+  	  <!-- Ignore everything that starts with an underscore. -->
+    <rule>
+      <match>
+          <identifier name="_.*"/>  
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+
+    	  <!-- Include functions, structs, unions, macros, etc-->
+    	  <!-- To learn more read: https://github.com/eiffel-wrap-c/WrapC/blob/master/doc/Readme.md#config_file-->
+
+     
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeStringStructured"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_List_free"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_new"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_new2"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_newMQR"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_append"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_appendECIheader"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_getVersion"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_setVersion"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_getErrorCorrectionLevel"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_setErrorCorrectionLevel"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_setVersionAndErrorCorrectionLevel"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_free"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_check"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_Struct_new"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_Struct_setParity"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_Struct_appendInput"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_Struct_free"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_splitQRinputToStruct"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_Struct_insertStructuredAppendHeaders"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_setFNC1First"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRinput_setFNC1Second"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeInput"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeString"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeString8bit"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeStringMQR"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeString8bitMQR"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeData"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeDataMQR"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_free"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeInputStructured"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeStringStructured"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeString8bitStructured"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_encodeDataStructured"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_List_size"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_List_free"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_APIVersion"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_APIVersionString"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+      <rule>
+        <match>
+          <identifier name="QRcode_clearCache"/>
+        </match>
+        <wrapper type="default">
+        </wrapper>
+      </rule> 
+      
+    
+    
+      <!-- And the rest should be ignored -->
+    <rule>
+      <match>
+      </match>
+       <wrapper type="none">
+      </wrapper>
+    </rule>
+
+
+  </rule_list>
+
+</ewg_config>
