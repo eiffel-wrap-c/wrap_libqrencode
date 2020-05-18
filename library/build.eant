@@ -24,7 +24,7 @@
     <set name="system_dir" value="${cwd}"/>
     <set name="wrap_c.library_name" value="wrap_libqrencode"/>
     <set name="wrap_c.full_header_name" value="$ECF_CONFIG_PATH${path_separator}C${path_separator}include" if="${is_windows}"/>
-    <set name="wrap_c.full_header_name" value="C:\home\tools\vcpkg\installed\x64-windows\include${path_separator}qrencode.h" unless="${is_windows}"/>
+    <set name="wrap_c.full_header_name" value="/usr/local/include/qrencode.h" unless="${is_windows}"/>
     
     
     <set name="wrap_c.c_compile_options" value=""/>

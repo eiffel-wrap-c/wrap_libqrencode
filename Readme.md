@@ -14,6 +14,30 @@ A fast and compact QR Code encoding library https://fukuchi.org/works/qrencode/
 
 ### Linux
 
+Get the sources from https://github.com/fukuchi/libqrencode
+
+Required packages on Ubuntu to install libqrencode
+
+	autoconf
+	automake
+	autotools-dev
+	libtool
+	pkg-config
+	libpng12-dev
+
+Now you can compile the library using the following commands
+
+	./configure
+	make
+	sudo make install
+	sudo ldconfig
+
+This compiles and installs the library and header file to the appropriate directories: by default, /usr/local/lib and /usr/local/include. 
+
+Alternatively you can use vckpg 
+
+	vckpg install libqrencode
+
 ### Windows
 Using vcpkg (https://github.com/microsoft/vcpkg) tool, you can install libqrencode library
 

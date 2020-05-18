@@ -10,13 +10,14 @@
 		<setting name="msil_classes_per_module" value="5"/>
 		<setting name="dead_code_removal" value="feature"/>
 
-	    <!-- Include headers needed for C glue code to implement callbacks -->
+	 	   <!-- Include headers needed for C glue code to implement callbacks -->
 		<external_include location="$ECF_CONFIG_PATH\generated_wrapper\c\include">
 			<condition>
 				<platform value="windows"/>
 			</condition>
 		</external_include>
-		<external_include location="$ECF_CONFIG_PATH/generated_wrapper/c/include">
+
+		<external_include location="/usr/local/include">
 			<condition>
 				<platform excluded_value="windows"/>
 			</condition>
@@ -53,6 +54,7 @@
 				<platform value="windows"/>
 			</condition>
 		</external_object>
+
 		<external_object location="$ECF_CONFIG_PATH/C/spec/$(ISE_PLATFORM)/lib/eif_qrencode.a">
 			<condition>
 				<platform excluded_value="windows"/>
@@ -61,11 +63,11 @@
 
 
 		<!-- External C library -->
-		<external_object location="/usr/local/lib/qrencode.so">
+		<external_linker_flag value="`pkg-config --libs libqrencode`">
 			<condition>
 				<platform excluded_value="windows"/>
 			</condition>
-		</external_object>
+		</external_linker_flag>
 		
 		<external_object location="$ECF_CONFIG_PATH/C/lib/qrencode.lib">
 			<condition>

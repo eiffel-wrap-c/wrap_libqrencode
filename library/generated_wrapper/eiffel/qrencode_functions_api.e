@@ -9,136 +9,178 @@ class QRENCODE_FUNCTIONS_API
 
 feature -- Access
 
-	qrinput_new: detachable QRINPUT_STRUCT_API
+	qrinput_new: detachable QRINPUT_STRUCT_API 
 		do
 			if attached c_qrinput_new as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrinput_new2 (version: INTEGER; level: INTEGER): detachable QRINPUT_STRUCT_API
+	qrinput_new2 (version: INTEGER; level: INTEGER): detachable QRINPUT_STRUCT_API 
 		do
 			if attached c_qrinput_new2 (version, level) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrinput_new_mqr (version: INTEGER; level: INTEGER): detachable QRINPUT_STRUCT_API
+	qrinput_new_mqr (version: INTEGER; level: INTEGER): detachable QRINPUT_STRUCT_API 
 		do
 			if attached c_qrinput_new_mqr (version, level) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrinput_append (input: QRINPUT_STRUCT_API; mode: INTEGER; size: INTEGER; data: STRING): INTEGER
+	qrinput_append (input: QRINPUT_STRUCT_API; mode: INTEGER; size: INTEGER; data: STRING): INTEGER 
 		local
 			data_c_string: C_STRING
 		do
 			create data_c_string.make (data)
 			Result := c_qrinput_append (input.item, mode, size, data_c_string.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_append_eciheader (input: QRINPUT_STRUCT_API; ecinum: INTEGER): INTEGER
+	qrinput_append_eciheader (input: QRINPUT_STRUCT_API; ecinum: INTEGER): INTEGER 
 		do
 			Result := c_qrinput_append_eciheader (input.item, ecinum)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_get_version (input: QRINPUT_STRUCT_API): INTEGER
+	qrinput_get_version (input: QRINPUT_STRUCT_API): INTEGER 
 		do
 			Result := c_qrinput_get_version (input.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_set_version (input: QRINPUT_STRUCT_API; version: INTEGER): INTEGER
+	qrinput_set_version (input: QRINPUT_STRUCT_API; version: INTEGER): INTEGER 
 		do
 			Result := c_qrinput_set_version (input.item, version)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_get_error_correction_level (input: QRINPUT_STRUCT_API): INTEGER
+	qrinput_get_error_correction_level (input: QRINPUT_STRUCT_API): INTEGER 
 		do
 			Result := c_qrinput_get_error_correction_level (input.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_set_error_correction_level (input: QRINPUT_STRUCT_API; level: INTEGER): INTEGER
+	qrinput_set_error_correction_level (input: QRINPUT_STRUCT_API; level: INTEGER): INTEGER 
 		do
 			Result := c_qrinput_set_error_correction_level (input.item, level)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_set_version_and_error_correction_level (input: QRINPUT_STRUCT_API; version: INTEGER; level: INTEGER): INTEGER
+	qrinput_set_version_and_error_correction_level (input: QRINPUT_STRUCT_API; version: INTEGER; level: INTEGER): INTEGER 
 		do
 			Result := c_qrinput_set_version_and_error_correction_level (input.item, version, level)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_free (input: QRINPUT_STRUCT_API)
+	qrinput_free (input: QRINPUT_STRUCT_API) 
 		do
 			c_qrinput_free (input.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_check (mode: INTEGER; size: INTEGER; data: STRING): INTEGER
+	qrinput_check (mode: INTEGER; size: INTEGER; data: STRING): INTEGER 
 		local
 			data_c_string: C_STRING
 		do
 			create data_c_string.make (data)
 			Result := c_qrinput_check (mode, size, data_c_string.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_struct_new: detachable QRINPUT_STRUCT_STRUCT_API
+	qrinput_struct_new: detachable QRINPUT_STRUCT_STRUCT_API 
 		do
 			if attached c_qrinput_struct_new as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrinput_struct_set_parity (s: QRINPUT_STRUCT_STRUCT_API; parity: INTEGER)
+	qrinput_struct_set_parity (s: QRINPUT_STRUCT_STRUCT_API; parity: INTEGER) 
 		do
 			c_qrinput_struct_set_parity (s.item, parity)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_struct_append_input (s: QRINPUT_STRUCT_STRUCT_API; input: QRINPUT_STRUCT_API): INTEGER
+	qrinput_struct_append_input (s: QRINPUT_STRUCT_STRUCT_API; input: QRINPUT_STRUCT_API): INTEGER 
 		do
 			Result := c_qrinput_struct_append_input (s.item, input.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_struct_free (s: QRINPUT_STRUCT_STRUCT_API)
+	qrinput_struct_free (s: QRINPUT_STRUCT_STRUCT_API) 
 		do
 			c_qrinput_struct_free (s.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_split_qrinput_to_struct (input: QRINPUT_STRUCT_API): detachable QRINPUT_STRUCT_STRUCT_API
+	qrinput_split_qrinput_to_struct (input: QRINPUT_STRUCT_API): detachable QRINPUT_STRUCT_STRUCT_API 
 		do
 			if attached c_qrinput_split_qrinput_to_struct (input.item) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrinput_struct_insert_structured_append_headers (s: QRINPUT_STRUCT_STRUCT_API): INTEGER
+	qrinput_struct_insert_structured_append_headers (s: QRINPUT_STRUCT_STRUCT_API): INTEGER 
 		do
 			Result := c_qrinput_struct_insert_structured_append_headers (s.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_set_fnc1first (input: QRINPUT_STRUCT_API): INTEGER
+	qrinput_set_fnc1first (input: QRINPUT_STRUCT_API): INTEGER 
 		do
 			Result := c_qrinput_set_fnc1first (input.item)
+		ensure
+			instance_free: class
 		end
 
-	qrinput_set_fnc1second (input: QRINPUT_STRUCT_API; appid: INTEGER): INTEGER
+	qrinput_set_fnc1second (input: QRINPUT_STRUCT_API; appid: INTEGER): INTEGER 
 		do
 			Result := c_qrinput_set_fnc1second (input.item, appid)
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_input (input: QRINPUT_STRUCT_API): detachable QRCODE_STRUCT_API
+	qrcode_encode_input (input: QRINPUT_STRUCT_API): detachable QRCODE_STRUCT_API 
 		do
 			if attached c_qrcode_encode_input (input.item) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_string (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -147,9 +189,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string8bit (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_string8bit (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -158,9 +202,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string_mqr (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_string_mqr (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -169,9 +215,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string8bit_mqr (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_string8bit_mqr (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -180,9 +228,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_data (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_data (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
@@ -191,9 +241,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_data_mqr (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API
+	qrcode_encode_data_mqr (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
@@ -202,22 +254,28 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_free (qrcode: QRCODE_STRUCT_API)
+	qrcode_free (qrcode: QRCODE_STRUCT_API) 
 		do
 			c_qrcode_free (qrcode.item)
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_input_structured (s: QRINPUT_STRUCT_STRUCT_API): detachable QRCODE_LIST_STRUCT_API
+	qrcode_encode_input_structured (s: QRINPUT_STRUCT_STRUCT_API): detachable QRCODE_LIST_STRUCT_API 
 		do
 			if attached c_qrcode_encode_input_structured (s.item) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string_structured (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_LIST_STRUCT_API
+	qrcode_encode_string_structured (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -226,9 +284,11 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_string8bit_structured (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API
+	qrcode_encode_string8bit_structured (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -236,9 +296,12 @@ feature -- Access
 			if attached c_qrcode_encode_string8bit_structured (string_c_string.item, version, level) as l_ptr and then not l_ptr.is_default_pointer then
 				create Result.make_by_pointer ( l_ptr )
 			end
+
+		ensure
+			instance_free: class
 		end
 
-	qrcode_encode_data_structured (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API
+	qrcode_encode_data_structured (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
@@ -247,21 +310,29 @@ feature -- Access
 				create Result.make_by_pointer ( l_ptr )
 			end
 
+		ensure
+			instance_free: class
 		end
 
-	qrcode_list_size (qrlist: QRCODE_LIST_STRUCT_API): INTEGER
+	qrcode_list_size (qrlist: QRCODE_LIST_STRUCT_API): INTEGER 
 		do
 			Result := c_qrcode_list_size (qrlist.item)
+		ensure
+			instance_free: class
 		end
 
-	qrcode_list_free (qrlist: QRCODE_LIST_STRUCT_API)
+	qrcode_list_free (qrlist: QRCODE_LIST_STRUCT_API) 
 		do
 			c_qrcode_list_free (qrlist.item)
+		ensure
+			instance_free: class
 		end
 
-	qrcode_apiversion (major_version: POINTER; minor_version: POINTER; micro_version: POINTER)
+	qrcode_apiversion (major_version: POINTER; minor_version: POINTER; micro_version: POINTER) 
 		do
 			c_qrcode_apiversion (major_version, minor_version, micro_version)
+		ensure
+			instance_free: class
 		end
 
 	qrcode_apiversion_string: POINTER
