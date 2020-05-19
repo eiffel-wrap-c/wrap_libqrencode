@@ -32,8 +32,8 @@ feature {NONE} -- Initialization
 			if attached {QRCODE_STRUCT_API} {QRENCODE_FUNCTIONS}.qrcode_encode_string ("EiffelQRencode", 0, {QREC_LEVEL_ENUM_API}.QR_ECLEVEL_L, {QRENCODE_MODE_ENUM_API}.QR_MODE_8, 1) as l_qrcode then
 				width := l_qrcode.width * ZOOM_SIZE
 				if attached l_qrcode.data as l_data then
-					data := l_data.string
-					create buffer.make_filled ('1',{PLATFORM}.character_8_bytes * width * width)
+					data := l_data
+					create buffer.make_filled ('%U',{PLATFORM}.character_8_bytes * width * width)
 					print ("P1%N" + width.out + " " +width.out +"%N")
 					from
 						i := 1

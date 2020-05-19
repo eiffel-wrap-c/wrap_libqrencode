@@ -87,7 +87,7 @@ feature -- Test routines
 			end
 		end
 
-	print_frame (a_width: INTEGER; a_data: C_STRING)
+	print_frame (a_width: INTEGER; a_data: STRING)
 		local
 			i: INTEGER
 			x: INTEGER
