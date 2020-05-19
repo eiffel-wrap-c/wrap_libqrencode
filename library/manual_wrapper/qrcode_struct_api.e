@@ -75,11 +75,23 @@ feature {ANY} -- Member Access
 
 	data: detachable STRING
 		local
-			l_cstr: C_STRING
+			l_mptr: MANAGED_POINTER
+			l_count: INTEGER
+			i: INTEGER
 		do
 			if attached c_data (item) as l_ptr then
-				create l_cstr.make_by_pointer_and_count (l_ptr, {PLATFORM}.character_8_bytes * width * width)
-				Result := l_cstr.string
+				l_count := {PLATFORM}.character_8_bytes * width * width
+				create l_mptr.make_from_pointer (l_ptr, l_count)
+				create Result.make_filled ('%U', {PLATFORM}.character_8_bytes * width * width)
+				from
+					i := 0
+				until
+					i >= l_count
+				loop
+					Result.put (l_mptr.read_character (i), i + 1)
+					i := i + 1
+				end
+
 			end
 		end
 

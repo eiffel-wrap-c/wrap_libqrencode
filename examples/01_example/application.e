@@ -23,7 +23,7 @@ feature {NONE} -- Initialization
 			buffer: STRING
 			y, y_index: INTEGER
 			x: INTEGER
-			v: NATURAL
+			v: CHARACTER
 			i: INTEGER
 			iy, iy_index : INTEGER
 			ix: INTEGER
@@ -47,7 +47,7 @@ feature {NONE} -- Initialization
 						until
 							x >= width
 						loop
-							v := if (data[i].code & 1) /= 0 then 1 else 0 end
+							v := if (data[i].code & 1) /= 0 then '1' else '0' end
 							from
 								iy := 0
 							until
@@ -59,7 +59,7 @@ feature {NONE} -- Initialization
 								until
 									ix >= ZOOM_SIZE
 								loop
-									buffer.put_code (v, iy_index + (x + ix) + 1)
+									buffer.put (v, iy_index + (x + ix) + 1)
 									ix := ix + 1
 								end
 								iy := iy + 1
