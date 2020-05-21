@@ -7,7 +7,7 @@ rem copy .\manual_wrapper\c\src\*.c  .\generated_wrapper\c\src -- example
 rem copy Makefile script
 rem copy Makefile-win.SH  .\generated_wrapper\c\src -- example
 
-cd /generated_wrapper/eiffel/
+cd generated_wrapper/eiffel/
 del /f qrcode_struct_api.e
 cd ..
 cd ..

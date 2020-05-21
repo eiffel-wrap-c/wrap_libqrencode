@@ -39,7 +39,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrinput_append (input: QRINPUT_STRUCT_API; mode: INTEGER; size: INTEGER; data: STRING): INTEGER 
+	qrinput_append (input: QRINPUT_STRUCT_API; mode: INTEGER; size: INTEGER; data: STRING_8): INTEGER 
 		local
 			data_c_string: C_STRING
 		do
@@ -98,7 +98,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrinput_check (mode: INTEGER; size: INTEGER; data: STRING): INTEGER 
+	qrinput_check (mode: INTEGER; size: INTEGER; data: STRING_8): INTEGER 
 		local
 			data_c_string: C_STRING
 		do
@@ -180,7 +180,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_string (string: STRING_8; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -193,7 +193,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string8bit (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_string8bit (string: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -206,7 +206,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string_mqr (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_string_mqr (string: STRING_8; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -219,7 +219,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string8bit_mqr (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_string8bit_mqr (string: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -232,7 +232,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_data (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_data (size: INTEGER; data: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
@@ -245,7 +245,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_data_mqr (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
+	qrcode_encode_data_mqr (size: INTEGER; data: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
@@ -275,7 +275,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string_structured (string: STRING; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_LIST_STRUCT_API 
+	qrcode_encode_string_structured (string: STRING_8; version: INTEGER; level: INTEGER; hint: INTEGER; casesensitive: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -288,7 +288,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_string8bit_structured (string: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
+	qrcode_encode_string8bit_structured (string: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			string_c_string: C_STRING
 		do
@@ -301,7 +301,7 @@ feature -- Access
 			instance_free: class
 		end
 
-	qrcode_encode_data_structured (size: INTEGER; data: STRING; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
+	qrcode_encode_data_structured (size: INTEGER; data: STRING_8; version: INTEGER; level: INTEGER): detachable QRCODE_LIST_STRUCT_API 
 		local
 			data_c_string: C_STRING
 		do
