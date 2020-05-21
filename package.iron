@@ -1,0 +1,20 @@
+package wrap_libqrencode
+
+project
+	wrap_libqrencode = "library/wrap_libqrencode.ecf"
+
+note
+	title: Eiffel wrap_libqrencode
+	description: "[
+	wrap_libqrencode is an Eiffel binding of libqrencode using WrapC tool.
+	
+	Libqrencode is a fast and compact library for encoding data in a QR Code, a 2D symbology that can be scanned by handy terminals such as a smartphone. The capacity of QR Code is up to 7000 digits or 4000 characters and has high robustness.
+				]"
+
+	tags: qrencode, library , wrapc 
+	license: EFL
+	copyright: Copyright (c)  2020 Javier Velilla, Eiffel Software and others.
+	link[license]: "license" "https://github.com/eiffel-wrap-c/wrap_libqrencode/blob/master/license.lic"
+	link[github]: "project" https://github.com/eiffel-wrap-c/wrap_libqrencode
+
+end

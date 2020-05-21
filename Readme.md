@@ -2,6 +2,8 @@
 `wrap_libqrencode` is an Eiffel binding of [libqrencode](https://github.com/fukuchi/libqrencode) 
 using [WrapC](https://github.com/eiffel-wrap-c/WrapC) tool.
 
+Libqrencode((https://github.com/fukuchi/libqrencode) ) is a fast and compact library for encoding data in a QR Code, a 2D symbology that can be scanned by handy terminals such as a smartphone. The capacity of QR Code is up to 7000 digits or 4000 characters and has high robustness. 
+
 ## Requirements 
 
 
@@ -50,18 +52,18 @@ Then copy the `qrencode.lib` to `%LIBRARY_PATH%wrap_library/library/C/lib`
 
 Work in progress
 
-
 ## Examples
+* [Example 01](./examples/01_example) 		`shows how to use qrencode library`
 
 ### How to compile the C library glue code.
 
 Before to use the examples you will need to compile the C glue code, go to 
 
-	`library/generated_wrapper/c/src` 
+	library/generated_wrapper/c/src
 
 and run
 
-	`finish_freezing --library`
+	finish_freezing --library
 
-It will copy the C lib `eif_libqrencode.a` or `eif_libqrencode.lib` under the library root `$ECF_CONFIG_PATH/C/spec/$(ISE_PLATFORM)/lib/`
+It will copy the C lib `eif_qrencode.a` to `$ECF_CONFIG_PATH/C/spec/$(ISE_PLATFORM)/lib` or `eif_qrencode.lib` to `$ECF_CONFIG_PATH/C/spec/$ISE_C_COMPILER/$ISE_PLATFORM/lib`
 

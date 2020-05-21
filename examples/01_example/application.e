@@ -1,8 +1,11 @@
 note
 	description: "[
+		Eiffel libqrencode example 
+		Based on C code example https://gist.github.com/syohex/b1aa695dc6ac5dced139#file-qrencode-encode-sample-c
 	]"
 	date: "$Date$"
 	revision: "$Revision$"
+	EIS: "name=libqrencode example", "src=https://gist.github.com/syohex/b1aa695dc6ac5dced139#file-qrencode-encode-sample-c", "protocol=uri"
 
 class
 	APPLICATION
